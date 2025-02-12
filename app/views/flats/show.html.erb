@@ -1,0 +1,19 @@
+<%= image_tag("map.jpg", :alt => "map", class: "w-75") %>
+
+<div class="bg-light shadow-sm p-3 m-3 w-50">
+  <h2><%= @flats.name %></h2>
+  <p><%= @flats.address %></p>
+</div>
+
+<div class="bg-light shadow-sm p-3 m-3 w-50">
+  <h5>Know more bout this flat</h5>
+  <p><%= @flats.description %></p>
+</div>
+
+<div class="bg-light shadow-sm p-3 m-3 w-50">
+  <h5>Details</h5>
+  <i class="fa-solid fa-users"></i> <%= @flats.number_of_guests %>&nbsp &nbsp
+  <i class="fa-solid fa-euro-sign"></i> <%= @flats.price_per_night %>
+</div>
+
+<h2><%= link_to "🔙", flats_path %></h2>

@@ -1,0 +1,26 @@
+
+
+
+
+  <h2>All our Flats</h2>
+
+  <ul class="d-flex">
+    <% @flats.each do |flat| %>
+      <li class="card shadow-sm p-3 mb-5 bg-white rounded m-2">
+        <div class="card-header h-75">
+          <h5 class="card-title"><%= flat.name %></h5>
+          <p class="card-subtitle mb-2 text-muted"><%= flat.address %></p>
+          <p>
+            <i class="fa-solid fa-users"></i> <%= flat.number_of_guests %>&nbsp &nbsp
+            <i class="fa-solid fa-euro-sign"></i> <%= flat.price_per_night %>
+          </p>
+        </div>
+        <div class="card-body">
+          <%= link_to "view info", flat_path(flat), :class=>"card-link" %>
+        </div>
+      </li>
+
+
+    <% end %>
+  </ul>
+</div>

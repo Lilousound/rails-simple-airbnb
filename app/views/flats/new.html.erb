@@ -1,0 +1,13 @@
+<div class="w-25 mx-auto bg-light p-3" >
+  <h3>Add a new Flat</h3>
+  <%= simple_form_for(@flat) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :description %>
+  <%= f.input :price_per_night %>
+  <%= f.input :number_of_guests %>
+  <%= f.submit class:"btn btn-primary" %>
+  <%= f.button :button, "Cancel", class:"btn btn-danger" %>
+
+  <% end %>
+</div>

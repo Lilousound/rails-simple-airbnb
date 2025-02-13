@@ -10,3 +10,29 @@ a {
 .card {
   width: 300px;
 }
+
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-trip > img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.flat-cards {
+  position: absolute;
+  left: 100px;
+  top: 300px;
+  width: 1200px;
+}
+
+.book-cards {
+  position: absolute;
+  right: -230px;
+  top: 300px;
+  width: 800px;
+}

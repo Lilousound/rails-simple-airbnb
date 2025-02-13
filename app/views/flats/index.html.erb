@@ -1,12 +1,13 @@
 
 
-
+<div class="container mt-3">
 
   <h2>All our Flats</h2>
 
-  <ul class="d-flex">
+  <ul class="d-flex row">
     <% @flats.each do |flat| %>
       <li class="card shadow-sm p-3 mb-5 bg-white rounded m-2">
+        <img src="<%= flat.image_url%>" height="160px"/>
         <div class="card-header h-75">
           <h5 class="card-title"><%= flat.name %></h5>
           <p class="card-subtitle mb-2 text-muted"><%= flat.address %></p>
@@ -16,7 +17,11 @@
           </p>
         </div>
         <div class="card-body">
-          <%= link_to "view info", flat_path(flat), :class=>"card-link" %>
+          <%= link_to "View info", flat_path(flat), :class=>"card-link text-primary" %>
+          <%= link_to "Edit", edit_flat_path(flat), :class=>"card-link text-warning" %>
+          <%= link_to "Remove", flat_path(flat),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class=>"card-link text-danger" %>
+
         </div>
       </li>
 

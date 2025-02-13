@@ -1,19 +1,61 @@
-<%= image_tag("map.jpg", :alt => "map", class: "w-75") %>
 
-<div class="bg-light shadow-sm p-3 m-3 w-50">
-  <h2><%= @flats.name %></h2>
-  <p><%= @flats.address %></p>
+<div class="card-trip">
+  <img src="<%= @flats.image_url%>"/>
 </div>
 
-<div class="bg-light shadow-sm p-3 m-3 w-50">
-  <h5>Know more bout this flat</h5>
-  <p><%= @flats.description %></p>
+<div class="flat-cards">
+  <div class="bg-light shadow-sm p-3 m-3 w-50">
+    <h2><%= @flats.name %></h2>
+    <p><%= @flats.address %></p>
+  </div>
+
+  <div class="bg-light shadow-sm p-3 m-3 w-50">
+    <h5>Know more bout this flat</h5>
+    <p><%= @flats.description %></p>
+  </div>
+
+
+  <h2><%= link_to "🔙", flats_path %></h2>
 </div>
 
-<div class="bg-light shadow-sm p-3 m-3 w-50">
-  <h5>Details</h5>
-  <i class="fa-solid fa-users"></i> <%= @flats.number_of_guests %>&nbsp &nbsp
-  <i class="fa-solid fa-euro-sign"></i> <%= @flats.price_per_night %>
-</div>
+<div class="book-cards">
+  <div class="bg-light shadow-sm p-3 m-3 w-50">
+      <h6>Book this place</h6>
+      <form>
 
-<h2><%= link_to "🔙", flats_path %></h2>
+        <div class="input-group">
+            <span class="input-group-text" id="inputGroupPrepend">From:</span>
+            <input type="text" class="form-control" id="validationCustomUsername" placeholder="14/02/2025" aria-describedby="inputGroupPrepend" required>
+        </div>
+        <div class="input-group mt-1">
+            <span class="input-group-text" id="inputGroupPrepend">To:</span>
+            <input type="text" class="form-control" id="validationCustomUsername" placeholder="24/02/2025" aria-describedby="inputGroupPrepend" required>
+        </div>
+        <button class="btn btn-success mt-1 input-group" type="submit">Book</button>
+      </form>
+
+  </div>
+
+
+
+  <div class="bg-light shadow-sm p-3 m-3 w-50">
+      <h5>Details</h5>
+      <i class="fa-solid fa-users"></i> <%= @flats.number_of_guests %>&nbsp &nbsp
+      <i class="fa-solid fa-euro-sign"></i> <%= @flats.price_per_night %>
+  </div>
+
+  <div class="bg-light shadow-sm p-3 m-3 w-50 d-flex justify-content-between p-1">
+    <div><p>Share</p></div>
+    <div>
+      <h4>
+        <i class="fa-brands fa-square-facebook"></i>
+        <i class="fa-brands fa-square-twitter"></i>
+        <i class="fa-brands fa-square-pinterest"></i>
+        <i class="fa-solid fa-square-envelope"></i>
+      </h4>
+    </div>
+
+
+  </div>
+
+</div>
